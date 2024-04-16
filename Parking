@@ -1,0 +1,35 @@
+ #include <iostream>
+#include <iomanip>
+#include <string>
+#include <bits/stdc++.h>
+#include <algorithm>
+#include <cmath>
+#define ll long long
+
+
+using namespace std;
+
+
+
+int main() {
+ll int t;
+cin>>t;
+while(t--) {
+  ll int n;
+  int mx = INT_MIN, min = INT_MAX;
+  cin>>n;
+  ll int arr[n];
+  for(int i=0; i<n; i++) {
+    cin>>arr[i];
+    if(arr[i]>mx) {
+      mx = arr[i];
+    }
+    if(arr[i]<min) {
+      min = arr[i];
+    }
+  }
+  ll int ans = (mx-min)*2;
+  cout<<ans<<'\n';
+}
+ return 0;
+ }
