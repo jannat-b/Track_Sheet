@@ -1,0 +1,32 @@
+ #include <iostream>
+#include <iomanip>
+#include <string>
+#include <bits/stdc++.h>
+#include <algorithm>
+#include <cmath>
+#define ll long long
+
+
+using namespace std;
+
+
+
+int main() {
+ll int t,i=1;
+cin>>t;
+while(t--) {
+ll int N,mx=0;
+cin>>N;
+ll int arr[N];
+
+for(int i=0; i<N; i++) {
+  cin>>arr[i];
+  if(arr[i]>mx) {
+    mx=arr[i];
+  }
+}
+cout<<"Case "<<i<<": "<<mx<<'\n';
+i++;
+}
+ return 0;
+ }
