@@ -1,0 +1,39 @@
+ #include <iostream>
+#include <iomanip>
+#include <string>
+#include <bits/stdc++.h>
+#include <algorithm>
+#include <cmath>
+#define ll long long
+
+
+using namespace std;
+
+
+
+int main() {
+int n,N;
+cin>>N;
+n=N;
+bool isTrue= false;
+while(n>0) {
+ int d = (n%10);
+ if(d!=4 && d!=7) {
+  break;
+ } 
+ n/=10;
+}
+if(n<=0) {
+  isTrue = true;
+}else if(N%4==0 || N%7==0 || N%47==0 || N%74==0 || N%444==0 || N%474==0 || N%477==0) {
+    isTrue=true;
+}
+
+if(isTrue) {
+  cout<<"YES"<<'\n';
+} else {
+  cout<<"NO"<<'\n';
+}
+
+ return 0;
+ }
