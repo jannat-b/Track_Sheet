@@ -1,0 +1,33 @@
+ #include <iostream>
+#include <iomanip>
+#include <string>
+#include <bits/stdc++.h>
+#include <algorithm>
+#include <cmath>
+#define ll long long
+
+
+using namespace std;
+
+
+
+int main() {
+ll int n, k;
+cin>>n>>k;
+ll int arr[n];
+for(int i=0; i<n; i++) {
+  cin>>arr[i];
+}
+ll int count=0;
+for(int i=0; i<n; i++) {
+  if(arr[i]<=0) {
+    break;
+  }
+  if((arr[i]>=arr[k-1]) && arr[i]>0) {
+    count++;
+  }
+}
+cout<<count<<'\n';
+
+ return 0;
+ }
