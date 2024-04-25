@@ -1,0 +1,47 @@
+ #include <iostream>
+#include <iomanip>
+#include <string>
+#include <bits/stdc++.h>
+#include <algorithm>
+#include <cmath>
+#define ll long long
+
+
+using namespace std;
+
+
+
+
+int main() { 
+    int n,m,el;
+    while(cin>>n) {
+      vector<int> arr;
+      int i,j;
+      for(int i=0; i<n; i++) {
+          cin>>el;
+          arr.push_back(el);
+      }
+      cin>>m;
+     sort(arr.begin(), arr.end());
+     int st=0, en=n-1, min = INT_MAX;
+    
+     while(st<=en && st>=0 && en<n) {
+      
+      if((arr[st]+arr[en] == m) && (arr[en]-arr[st] <=min)) {
+        min=(arr[en]-arr[st]);
+        i=arr[st];
+        j=arr[en];
+       st++;
+       en--;
+      }
+      else if((arr[st]+arr[en]) < m) {
+        st++;
+      } else {
+       en--;
+      }
+     }
+     cout<<"Peter should buy books whose prices are "<<i<<" and "<<j<<"."<<'\n'<<'\n';
+    }
+
+    return 0;
+ }
