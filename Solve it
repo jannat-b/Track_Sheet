@@ -1,0 +1,46 @@
+ #include <iostream>
+#include <iomanip>
+#include <string>
+#include <bits/stdc++.h>
+#include <algorithm>
+#include <cmath>
+#define ll long long
+
+
+using namespace std;
+
+double EP = 1e-9;
+
+double check(double x, int p, int q, int r, int s, int t, int u) {
+    return p * exp(-x) + q * sin(x) + r * cos(x) + s * tan(x) + t * x * x + u;
+}
+
+double solve_it(int p, int q, int r, int s, int t, int u) {
+  double l=0, h=1;
+  while(h-l > EP) {
+    double mid = (l+h)/2;
+
+    if(check(l, p, q, r, s, t, u) * check(mid, p, q, r, s, t, u) <= 0) {
+      h = mid;
+    } else {
+      l = mid;
+    }
+  }
+
+  return l;
+}
+
+
+int main() { 
+    int p,q,r,s,t,u;
+    while(cin>>p>>q>>r>>s>>t>>u) {
+
+      if(check(0, p, q, r, s, t, u) * check(1, p, q, r, s, t, u) > 0) {
+        cout<<"No solution"<<'\n';
+      } else {
+        cout<<fixed<<setprecision(4)<<solve_it(p, q, r, s, t, u)<<'\n';
+      }
+    }
+
+    return 0;
+ }
